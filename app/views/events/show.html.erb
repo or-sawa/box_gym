@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="show">
+
+<p>
+  <strong>開始時間</strong>
+  <%= @event.started_at.strftime("%m-%d") %>
+</p>
+
+<p>
+  <strong>終了時間</strong>
+  <%= @event.finished_at.strftime("%m-%d") %>
+</p>
+
+<%= link_to '編集', edit_event_path(@event) %>
+<%= link_to '消去', event_path(@event.id), method: :delete, data: { confirm: '本当に?' } %>
+<%= link_to '戻る', events_path %>
+</div>
